@@ -1,0 +1,17 @@
+
+body {
+    margin: 0;
+}
+
+
+header {
+    display: flex;
+    height: 65px;
+    align-items: center;
+    background: #d7bde4;
+}
+
+.header-title {
+    font-size: 20px;
+    margin: auto;
+}
