@@ -1,17 +1,26 @@
-
-body {
-    margin: 0;
-}
-
-
 header {
     display: flex;
-    height: 65px;
     align-items: center;
-    background: #d7bde4;
+    justify-content: space-between;
+    height: 75px;
+    width: 100%;
+    box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+    padding-left: 100px;
+    padding-right: 20px;
 }
 
 .header-title {
-    font-size: 20px;
-    margin: auto;
+    color: rgba(181, 183, 253);
+    font-size: 30px;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+/* Side by side nav text instead of column */
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+    font-size: 25px;
 }
