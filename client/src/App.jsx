@@ -3,7 +3,7 @@ import About from './components/About'
 import AnimeList from './components/AnimeList'
 import Login from './components/Login'
 import SignUp from './components/SignUp'
-
+import AnimeInfo from './components/AnimeInfo'
 import './index.css'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 
@@ -17,6 +17,7 @@ function App() {
             <Route path="/anime" element={<AnimeList />}/>
             <Route path="/signup" element={<SignUp />}/>
             <Route path="/login" element={<Login />}/>
+            <Route path="/animeinfo" element={<AnimeInfo />}/>
           </Routes>
         </Router>
       </div>

@@ -22,6 +22,7 @@ const AnimeList = () => {
             <h1>Test</h1>
             <h1> {animeData.data.title} </h1>
             <h1> {animeData.data.synopsis} </h1>
+            <a href="/animeinfo">View more</a>
         </div>
     )
 }
