@@ -13,7 +13,7 @@ header {
 }
 
 .header-title {
-    color: black;
+    color: white;
     font-size: 30px;
     font-weight: lighter;
 }
@@ -31,5 +31,5 @@ header {
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: white;
 }

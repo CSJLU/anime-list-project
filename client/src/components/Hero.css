@@ -1,17 +1,33 @@
 .background-container {
     width: 100%;
     min-height: 100vh;
-    /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, .1), rgba(0, 0, 0, .3)), url('../assets/Books1.jpeg');*/
-    background-image: url('../assets/flowers.jpeg');
+    /*background-image: url('../assets/flowers.jpeg');*/
+    background-image: url('../assets/miku.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    height: 100vh;
+    width: 100vw;
 }
 
-.hero-text {
-    font-size: 80px;
-    color: #333;
-    position: fixed;
-    top: 50%;
-    left: 20%;
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+}
+
+.search-input {
+    text-align: center;
 }
