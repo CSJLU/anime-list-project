@@ -1,4 +1,5 @@
 import React from 'react'
+import AudioPlayer from './AudioPlayer'
 import './Hero.css'
 
 const Hero = () => {
@@ -16,6 +17,7 @@ const Hero = () => {
                     <button>Search</button>
                 </form>
             </div>
+            <AudioPlayer />
         </div>
     )
 }
