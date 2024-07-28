@@ -18,10 +18,14 @@ form {
     flex-direction: column;
 }
 
-
-h1 {
+h1, .search-input, input::placeholder {
     text-align: center;
 }
+
+.search-input {
+    margin-top: 15px;
+}
+
 
 .card {
     display: flex;
@@ -34,13 +38,13 @@ h1 {
     height: 350px;
 }
 
-.search-input {
-    margin-top: 15px;
-    text-align: center;
+
+input, button {
+    height: 30px;
+    border: none;
 }
 
 input {
-    height: 30px;
     width: 250px;
 }
 
@@ -49,11 +53,7 @@ button {
     margin-top: 15px;
     margin-left: auto;
     margin-right: auto;
-    height: 30px;
 }
 
-input::placeholder {
-    text-align: center;
-}
 
 
