@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AudioPlayer from './AudioPlayer'
 import './Hero.css'
+import AnimeContext from './AnimeContext'
 
 const Hero = () => {
     const [query, setQuery] = useState('')
@@ -28,24 +29,32 @@ const Hero = () => {
         }
     }
 
+    const HandleClick = () => {
+        return (
+            <AnimeList />
+        )
+    }
+
     return (
-        <div className="background-container">
-            <div className="card">
-                <form onSubmit={HandleAnimeSearch}>
-                    <h1 className="hero-text">Search for your favorite animes here</h1>
-                    <div className="search-input">
-                        <input
-                            type="text"
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
-                            placeholder="Search for an anime"
-                        />
-                    </div>
-                    <button type="submit">Search</button>
-                </form>
+        <AnimeContext.Provider value={animeData}>
+            <div className="background-container">
+                <div className="card">
+                    <form onSubmit={HandleAnimeSearch}>
+                        <h1 className="hero-text">Search for your favorite animes here</h1>
+                        <div className="search-input">
+                            <input
+                                type="text"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
+                                placeholder="Search for an anime"
+                            />
+                        </div>
+                        <button type="submit" onClick={HandleClick}>Search</button>
+                    </form>
+                </div>
+                <AudioPlayer />
             </div>
-            <AudioPlayer />
-        </div>
+        </AnimeContext.Provider>
     )
 }
 
