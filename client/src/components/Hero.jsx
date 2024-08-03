@@ -1,13 +1,15 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
 import AudioPlayer from './AudioPlayer'
 import './Hero.css'
+import AnimeList from './AnimeList'
 import AnimeContext from './AnimeContext'
 
 const Hero = () => {
     const [query, setQuery] = useState('')
-    const [animeData, setAnimeData] = useState([])
+    //const [animeData, setAnimeData] = useState([])
+    const { animeData, setAnimeData } = useContext(AnimeContext)
     const navigate = useNavigate()
 
     /*
@@ -22,39 +24,32 @@ const Hero = () => {
             const response = await fetch(`http://127.0.0.1:5000/search_anime?q=${query}`)
             const data = await response.json()
             setAnimeData(data)
-            console.log(data)
+            navigate('./animelist')
         }
         catch (error) {
             console.error(`Error retrieving anime data: ${error}`)
         }
     }
 
-    const HandleClick = () => {
-        return (
-            <AnimeList />
-        )
-    }
 
     return (
-        <AnimeContext.Provider value={animeData}>
-            <div className="background-container">
-                <div className="card">
-                    <form onSubmit={HandleAnimeSearch}>
-                        <h1 className="hero-text">Search for your favorite animes here</h1>
-                        <div className="search-input">
-                            <input
-                                type="text"
-                                value={query}
-                                onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
-                                placeholder="Search for an anime"
-                            />
-                        </div>
-                        <button type="submit" onClick={HandleClick}>Search</button>
-                    </form>
-                </div>
-                <AudioPlayer />
+        <div className="background-container">
+            <div className="card">
+                <form onSubmit={HandleAnimeSearch}>
+                    <h1 className="hero-text">Search for your favorite animes here</h1>
+                    <div className="search-input">
+                        <input
+                            type="text"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
+                            placeholder="Search for an anime"
+                        />
+                    </div>
+                    <button type="submit">Search</button>
+                </form>
             </div>
-        </AnimeContext.Provider>
+            <AudioPlayer />
+        </div>
     )
 }
 
