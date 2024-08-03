@@ -1,6 +1,5 @@
 import { createContext } from 'react'
 
-const AnimeContext = createContext(null)
+const AnimeContext = createContext([])
 
 export default AnimeContext
-
