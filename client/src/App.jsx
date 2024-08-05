@@ -8,7 +8,6 @@ import './index.css'
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import AnimeContext from './components/AnimeContext'
 import { useState } from 'react'
-import Background from './components/Background'
 
 function App() {
   const [animeData, setAnimeData] = useState([])
@@ -16,16 +15,14 @@ function App() {
     <AnimeContext.Provider value={{animeData, setAnimeData}}>
       <div className="app">
         <Router>
-          <Background>
-            <Routes>
-              <Route path="/" element={<Home />}/>
-              <Route path="/about" element={<About />}/>
-              <Route path="/animelist" element={<AnimeList />}/>
-              <Route path="/signup" element={<SignUp />}/>
-              <Route path="/login" element={<Login />}/>
-              <Route path="/animeinfo" element={<AnimeInfo />}/>
-            </Routes>
-          </Background>
+          <Routes>
+            <Route path="/" element={<Home />}/>
+            <Route path="/about" element={<About />}/>
+            <Route path="/animelist" element={<AnimeList />}/>
+            <Route path="/signup" element={<SignUp />}/>
+            <Route path="/login" element={<Login />}/>
+            <Route path="/animeinfo" element={<AnimeInfo />}/>
+          </Routes>
         </Router>
       </div>
     </AnimeContext.Provider>
