@@ -34,7 +34,7 @@ const Hero = () => {
 
     return (
         <div className="background-container">
-            <div className="card">
+            <div className="hero-card">
                 <form onSubmit={HandleAnimeSearch}>
                     <h1 className="hero-text">Search for your favorite animes here</h1>
                     <div className="search-input">

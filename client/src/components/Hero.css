@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 100vh;
     /*background-image: url('../assets/flowers.jpeg');*/
-    /*background-image: url('../assets/miku.jpg');*/
+    background-image: url('../assets/miku.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -12,31 +12,6 @@
     height: 100vh;
     width: 100vw;
 }
-
-.home-background {
-    background-image: url('../assets/miku.jpg');
-}
-  
-.about-background {
-    background-image: url('../assets/flowers.jpeg');
-}
-
-.animelist-background {
-    background-image: url('../assets/miku.jpg');
-}
-
-.signup-background {
-    background-image: url('../assets/miku.jpg');
-}
-
-.login-background {
-    background-image: url('../assets/miku.jpg');
-}
-
-.animeinfo-background {
-    background-image: url('../assets/miku.jpg');
-}
-
 
 form {
     display: flex;
@@ -52,7 +27,7 @@ h1, .search-input, input::placeholder {
 }
 
 
-.card {
+.hero-card {
     display: flex;
     align-items: center;
     justify-content: center;
