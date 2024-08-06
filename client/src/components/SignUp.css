@@ -1,58 +1,42 @@
-.background-container {
-    width: 100%;
-    min-height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: url(../assets/miku.jpg);
+.signup-container {
     display: flex;
     justify-content: center;
-    align-items: center;  
+    align-items: center;
     height: 100vh;
-    width: 100vw;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
+.signup-form {
+    background: white;
+    max-width: 500px;
+    border-radius: 10px;
+    width: 100%;
 }
 
-h1, .sign-up-input, input::placeholder {
-    text-align: center;
+.form-title {
+    font-size: 40px;
 }
 
-.sign-up-input {
-    margin-top: 15px;
-}
-
-
-.sign-up-card {
+.form-group {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.34);
-    width: 750px;
-    height: 350px;
+    margin-bottom: 25px;
 }
 
-
-input, button {
-    height: 30px;
-    border: none;
+.register-button {
+    display: flex;
+    background-color: #7fa3f0;
+    align-items: center;
+    color: white;
+    border-radius: 8px;
+    padding: 19px 39px;
+    width: auto;
+    cursor: pointer;
 }
 
-input {
-    width: 250px;
+.signup-image {
+    display: flex;
+    background-color: black;
 }
-
-button {
-    width: 100px;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 
 
