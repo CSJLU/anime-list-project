@@ -1,7 +1,11 @@
 .bg-image {
     position: absolute;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     z-index: -1;
     filter: blur(20px);
+    transform: scale(1.1); /* Remove white border from blur */
 }
 
 .signup-container {
@@ -65,7 +69,7 @@ input[type="text"] {
     border: 2px solid white;
     border-radius: 50px;
     padding: 200px 250px;
-    box-shadow: 0px 15px 16.83px 0.17px white;
+    box-shadow: 0px 0px 20px white;
     background-color: white;
 }
 
