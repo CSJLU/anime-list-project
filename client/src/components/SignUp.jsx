@@ -2,12 +2,14 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faLock, faKey, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import signUpImage from '../assets/lay.jpg'
+import backgroundImage from '../assets/background.jpeg'
 import Header from './Header'
 import "./SignUp.css"
 
 const SignUp = () => {
     return (
         <div>
+            <img src={backgroundImage} className="bg-image"/>
             <div className="signup-container">
                 <div className="signup-content">
                     <div className="signup-form">

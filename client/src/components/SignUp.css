@@ -1,3 +1,9 @@
+.bg-image {
+    position: absolute;
+    z-index: -1;
+    filter: blur(20px);
+}
+
 .signup-container {
     display: flex;
     justify-content: center;
@@ -11,6 +17,7 @@
     border-radius: 10px;
     width: 100%;
 }
+
 
 .form-title {
     text-align: center;
@@ -41,6 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 
@@ -54,9 +62,11 @@ input[type="text"] {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    border-radius: 10px;
-    border-color: black;
+    border: 2px solid white;
+    border-radius: 50px;
+    padding: 200px 250px;
+    box-shadow: 0px 15px 16.83px 0.17px white;
+    background-color: white;
 }
 
 .signup-image {
@@ -64,6 +74,8 @@ input[type="text"] {
     width: 400px;
     height: auto;
 }
+
+
 
 
 
