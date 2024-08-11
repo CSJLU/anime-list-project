@@ -5,6 +5,7 @@ import AudioPlayer from './AudioPlayer'
 import './Hero.css'
 import AnimeList from './AnimeList'
 import AnimeContext from './AnimeContext'
+import axios from 'axios'
 
 const Hero = () => {
     const [query, setQuery] = useState('')
@@ -21,9 +22,13 @@ const Hero = () => {
     const HandleAnimeSearch = async (e) => {
         e.preventDefault()
         try {
+            /*
             const response = await fetch(`http://127.0.0.1:5000/anime/search_anime?q=${query}`)
             const data = await response.json()
-            setAnimeData(data)
+            */
+            const response = await axios.get(`http://127.0.0.1:5000/anime/search_anime?q=${query}`)
+            console.log(response.data)
+            setAnimeData(response.data)
             navigate('./animelist')
         }
         catch (error) {
