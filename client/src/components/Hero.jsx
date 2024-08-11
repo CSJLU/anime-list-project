@@ -21,7 +21,7 @@ const Hero = () => {
     const HandleAnimeSearch = async (e) => {
         e.preventDefault()
         try {
-            const response = await fetch(`http://127.0.0.1:5000/search_anime?q=${query}`)
+            const response = await fetch(`http://127.0.0.1:5000/anime/search_anime?q=${query}`)
             const data = await response.json()
             setAnimeData(data)
             navigate('./animelist')
