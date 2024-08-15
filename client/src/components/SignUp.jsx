@@ -31,9 +31,11 @@ const SignUp = () => {
                     email: email
                 })
                 console.log("Sign up information sent successfully: ", response.data )
+                alert("You have successfully signed up!")
             }
             catch (error) {
                 console.log("Trouble signing up: ", error)
+                alert("Error signing up.")
             }
         }
     }
