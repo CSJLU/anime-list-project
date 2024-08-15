@@ -91,7 +91,7 @@ const SignUp = () => {
                             <button className="register-button" type="submit">Register</button>
                         </form>
                     </div>
-                    {error && <div>{error}</div>}
+                    {error && <div className="error-message">{error}</div>}
                     <div className="signup-image-container">
                         <img src={signUpImage} className="signup-image" alt="Anime girl laying down"/>
                     </div>
