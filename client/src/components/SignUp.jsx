@@ -13,18 +13,29 @@ const SignUp = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
+    const [error, setError] = useState('')
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-
-        const response = await axios.post('http://127.0.0.1:5000/auth/signup', 
-        {
-            username: username,
-            password: password,
-            confirmPassword: confirmPassword,
-            email: email
-        })
-        console.log("Sign up information sent successfully: ", response.data )
+        if(password != confirmPassword) {
+            setError("Passwords do not match.")
+        }
+        else {
+            setError('')
+            try {
+                const response = await axios.post('http://127.0.0.1:5000/auth/signup', 
+                {
+                    username: username,
+                    password: password,
+                    confirmPassword: confirmPassword,
+                    email: email
+                })
+                console.log("Sign up information sent successfully: ", response.data )
+            }
+            catch (error) {
+                console.log("Trouble signing up: ", error)
+            }
+        }
     }
 
     return (
@@ -42,6 +53,7 @@ const SignUp = () => {
                                 name="username" 
                                 placeholder="Username"
                                 onChange={(e) => setUsername(e.target.value)}
+                                required
                                 />
                             </div>
                             <div className="form-group">
@@ -51,6 +63,7 @@ const SignUp = () => {
                                 name="password" 
                                 placeholder="Password"
                                 onChange={(e) => setPassword(e.target.value)}
+                                required
                                 />
                             </div>
                             <div className="form-group">
@@ -60,6 +73,7 @@ const SignUp = () => {
                                 name="confirm-password" 
                                 placeholder="Confirm Password"
                                 onChange={(e) => setConfirmPassword(e.target.value)}
+                                required
                                 />
                             </div>
                             <div className="form-group">
@@ -69,11 +83,13 @@ const SignUp = () => {
                                 name="email" 
                                 placeholder="Email"
                                 onChange={(e) => setEmail(e.target.value)}
+                                required
                                 />
                             </div>
                             <button className="register-button" type="submit">Register</button>
                         </form>
                     </div>
+                    {error && <div>{error}</div>}
                     <div className="signup-image-container">
                         <img src={signUpImage} className="signup-image" alt="Anime girl laying down"/>
                     </div>
