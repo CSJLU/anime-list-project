@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
-from .config import Config
+from ..instance.config import Config
 from .extensions import db, migrate
 #from .routes import routes
 from .routes.anime import anime_bp
