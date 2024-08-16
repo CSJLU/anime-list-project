@@ -15,10 +15,29 @@ const SignUp = () => {
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
 
+    const validEmail = (email) => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //regex for valid email
+        return emailRegex.test(email);
+    }
+
+    
     const handleSubmit = async (e) => {
         e.preventDefault()
-        if(password != confirmPassword) {
-            setError("Passwords do not match.")
+        let errorMessage = ""
+        const usernameLength = username.length
+
+        if(!validEmail(email)) {
+            errorMessage = "Email incorrect."
+        }
+        else if(password != confirmPassword) {
+            errorMessage = "Passwords do not match."
+        }
+        else if(usernameLength <= 1) {
+            errorMessage = "Username is too short."
+        }
+
+        if(errorMessage) {
+            setError(errorMessage)
         }
         else {
             setError('')
@@ -30,12 +49,11 @@ const SignUp = () => {
                     confirmPassword: confirmPassword,
                     email: email
                 })
-                console.log("Sign up information sent successfully: ", response.data )
+                console.log("Sign up information sent successfully: ", response.data)
                 alert("You have successfully signed up!")
             }
             catch (error) {
                 console.log("Trouble signing up: ", error)
-                alert("Error signing up.")
             }
         }
     }
