@@ -15,12 +15,6 @@ def signup_user():
     confirm_password = data.get('confirmPassword')
     email = data.get('email')
 
-    if not username or not password or not confirm_password or not email:
-        return jsonify({"error": "Empty fields exist"}), 400
-    
-    if password != confirm_password:
-        return jsonify({"error": "Passwords need to match"}), 400
-    
     existing_user = User.query.filter_by(username=username).first()
     if existing_user:
         return jsonify({"error": "User already exists"}), 400
@@ -28,10 +22,46 @@ def signup_user():
     hashed_password = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
     new_user = User(username, email, hashed_password)
 
-    db.session.add(new_user)
-    db.session.commit()
+    try:
+        db.session.add(new_user)
+        db.session.commit()
+    except Exception as e:
+        db.session.rollback()
+        print(f"Error: {e}")
+        return jsonify({"error": "An error occurred"}), 500
     
+    return jsonify({"message": "User created", "debug": f"User created: {username}, {email}"}), 201
 
-    return jsonify({"message": "User created"}), 201
+
+#@auth_bp.route('/login', methods=['POST'])
+##def login_user():
+    #data = request.get_json()
+    #username = data.get('username')
+    #password = data.get('password')
+    #email = data.get('email')
 
 
+#check for existing user
+@auth_bp.route('/checkuser', methods=['POST'])
+def checkExistingUsername():
+    data = request.json
+    username = data.get('username')
+
+    user = User.query.filter_by(username=username).first()
+
+    if user:
+        return jsonify({"exists": True})
+    else:
+        return jsonify({"exists": False})
+
+@auth_bp.route('/checkemail', methods=['POST']) 
+def checkExistingEmail():
+    data = request.json
+    email = data.get('email')
+
+    email = User.query.filter_by(email=email).first()
+
+    if email:
+        return jsonify({"exists": True})
+    else:
+        return jsonify({"exists": False})
