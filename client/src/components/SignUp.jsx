@@ -14,27 +14,71 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
+    const [usernameExists, setUsernameExists] = useState(null)
+    const [emailExists, setEmailExists] = useState(null)
 
     const validEmail = (email) => {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; //regex for valid email
+        const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ //regex for valid email
         return emailRegex.test(email);
     }
 
+    const handleUsernameCheck = async (username) => {
+        try {
+            const response = await axios.post('http://127.0.0.1:5000/auth/checkuser',
+            {
+                username: username
+                
+            })
+            setUsernameExists(response.data.exists)
+        }
+        catch (error) {
+            console.log("Issue with username check: ", error)
+            setUsernameExists(null)
+        }
+    }
+
     
+    const handleEmailCheck = async (email) => {
+        try {
+            console.log("Email checked")
+            const response = await axios.post('http://127.0.0.1:5000/auth/checkemail',
+            {
+                email: email
+            })
+            setEmailExists(response.data.exists)
+        }
+        catch (error) {
+            console.log("Issue with email check: ", error)
+            setEmailExists(null)
+        }
+    }
+    
+    handleUsernameCheck(username)
+    handleEmailCheck(email)
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         let errorMessage = ""
         const usernameLength = username.length
+        
+
 
         if(!validEmail(email)) {
-            errorMessage = "Email incorrect."
+            errorMessage = "Email format is incorrect."
         }
-        else if(password != confirmPassword) {
-            errorMessage = "Passwords do not match."
+        else if(usernameExists) {
+            errorMessage = "Username has been taken."
         }
         else if(usernameLength <= 1) {
             errorMessage = "Username is too short."
         }
+        else if(password != confirmPassword) {
+            errorMessage = "Passwords do not match."
+        }
+        else if(emailExists) {
+            errorMessage = "Email already exists."
+        }
+
 
         if(errorMessage) {
             setError(errorMessage)
