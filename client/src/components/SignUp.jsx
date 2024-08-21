@@ -14,8 +14,6 @@ const SignUp = () => {
     const [confirmPassword, setConfirmPassword] = useState('')
     const [email, setEmail] = useState('')
     const [error, setError] = useState('')
-    const [usernameExists, setUsernameExists] = useState(null)
-    const [emailExists, setEmailExists] = useState(null)
 
     const validEmail = (email) => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/ //regex for valid email
@@ -29,7 +27,7 @@ const SignUp = () => {
                 username: username
                 
             })
-            setUsernameExists(response.data.exists)
+            return response.data.exists
         }
         catch (error) {
             console.log("Issue with username check: ", error)
@@ -45,28 +43,26 @@ const SignUp = () => {
             {
                 email: email
             })
-            setEmailExists(response.data.exists)
+            return response.data.exists
         }
         catch (error) {
             console.log("Issue with email check: ", error)
             setEmailExists(null)
         }
     }
-    
-    handleUsernameCheck(username)
-    handleEmailCheck(email)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
         let errorMessage = ""
         const usernameLength = username.length
-        
+        const usernameCheck = await handleUsernameCheck(username)
+        const emailCheck = await handleEmailCheck(email)
 
 
         if(!validEmail(email)) {
             errorMessage = "Email format is incorrect."
         }
-        else if(usernameExists) {
+        else if(usernameCheck) {
             errorMessage = "Username has been taken."
         }
         else if(usernameLength <= 1) {
@@ -75,7 +71,7 @@ const SignUp = () => {
         else if(password != confirmPassword) {
             errorMessage = "Passwords do not match."
         }
-        else if(emailExists) {
+        else if(emailCheck) {
             errorMessage = "Email already exists."
         }
 
