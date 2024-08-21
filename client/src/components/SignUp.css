@@ -1,7 +1,7 @@
 .bg-image {
     position: absolute;
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     z-index: -1;
     filter: blur(20px);
@@ -52,7 +52,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 
@@ -77,6 +76,7 @@ input[type="text"] {
     margin-left: 200px;
     width: 400px;
     height: auto;
+
 }
 
 .error-message {
