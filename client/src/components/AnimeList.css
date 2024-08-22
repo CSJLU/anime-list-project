@@ -1,0 +1,10 @@
+.anime-list-wrapper {
+    height: 100vh;
+    overflow-y: auto; 
+    overflow-x: hidden;
+    background-color: grey;
+}
+
+.card {
+    border-radius: 10px;
+}
