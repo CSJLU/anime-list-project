@@ -8,25 +8,31 @@ import { useNavigate } from 'react-router-dom';
 
 const AnimeList = () => { 
     const { animeData, setAnimeData } = useContext(AnimeContext)
-    const { query, setQuery } = useContext(AnimeContext)
-    const navigate = useNavigate()
+    const navigate = useNavigate() //return button will navigate back to home component
+
+    const truncateTitle = (title) => {
+        if(title.length > 55) {
+            return title.slice(0, 50) + "..."
+        }
+        return title
+    }
 
     return (
         <>
             { animeData && animeData.data ? (
                 <div>
-                    <Header />
-                        <div className="anime-list-container">
-                            {animeData.data.map(anime => (
-                                <a href={anime.url}>
-                                    <div key={anime.mal_id} className="card">
-                                        <h3 className="anime-title">{anime.title}</h3>
-                                        <img src={anime.images.jpg.image_url} alt="Image of anime" className="anime-image"/>
-                                    </div>
-                                </a>
-                            ))}
-                        </div>
+                    <div className="anime-list-container">
+                        <h1 className="result-text">Anime Search Results</h1>
+                        {animeData.data.map(anime => (
+                            <a href={anime.url}>
+                                <div key={anime.mal_id} className="card">
+                                    <h3 className="anime-title">{truncateTitle(anime.title)}</h3>
+                                    <img src={anime.images.jpg.image_url} alt="Image of anime" className="anime-image"/>
+                                </div>
+                            </a>
+                        ))}
                     </div>
+                </div>
             ) : (
                 <div className="return-container">
                     <button className="return-button" type="submit">Please click here to return</button>
