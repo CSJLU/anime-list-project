@@ -17,6 +17,10 @@ const AnimeList = () => {
         return title
     }
 
+    const redirectHomepage = () => {
+        navigate('/')
+    }
+
     return (
         <>
             { animeData && animeData.data ? (
@@ -35,7 +39,7 @@ const AnimeList = () => {
                 </div>
             ) : (
                 <div className="return-container">
-                    <button className="return-button" type="submit">Please click here to return</button>
+                    <button className="return-button" onClick={redirectHomepage}>Please click here to return to search page</button>
                 </div>
             )}
         </>
