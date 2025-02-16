@@ -22,27 +22,31 @@ const AnimeList = () => {
     }
 
     return (
-        <>
+        <> 
             { animeData && animeData.data ? (
-                <div>
-                    <div className="anime-list-container">
-                        <h1 className="result-text">Anime Search Results</h1>
+                <div className="anime-list-container">
+                    <ul >
                         {animeData.data.map(anime => (
-                            <a href={anime.url}>
-                                <div key={anime.mal_id} className="card">
-                                    <h3 className="anime-title">{truncateTitle(anime.title)}</h3>
-                                    <img src={anime.images.jpg.image_url} alt="Image of anime" className="anime-image"/>
+                            <li className="anime-items">
+                                <div className="anime-title">
+                                    <span>{anime.title}</span>
                                 </div>
-                            </a>
+                                <div className="anime-rating">
+                                    <span>{anime.score}</span>
+                                </div>
+                                <div className="anime-date">
+                                    <span>{anime.aired.prop.from.year}</span>
+                                </div>
+                            </li>
                         ))}
-                    </div>
+                    </ul>
                 </div>
             ) : (
                 <div className="return-container">
                     <button className="return-button" onClick={redirectHomepage}>Please click here to return to search page</button>
                 </div>
             )}
-        </>
+        </>           
     )
 }
 
