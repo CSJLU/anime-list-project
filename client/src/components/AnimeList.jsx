@@ -24,6 +24,8 @@ const AnimeList = () => {
     return (
         <> 
             { animeData && animeData.data ? (
+            <div>
+                <h1 className="result-text">Result</h1>
                 <div className="anime-list-container">
                     <ul >
                         {animeData.data.map(anime => (
@@ -41,6 +43,7 @@ const AnimeList = () => {
                         ))}
                     </ul>
                 </div>
+            </div>
             ) : (
                 <div className="return-container">
                     <button className="return-button" onClick={redirectHomepage}>Please click here to return to search page</button>

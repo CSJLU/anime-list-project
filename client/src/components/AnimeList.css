@@ -66,7 +66,7 @@ body {
 }
 
 .anime-list-container {
-    margin: 100px 0px;
+    margin: 50px 0px;
     padding: 0px 30px;
     background-color: black;
     min-height: 100vh;
@@ -115,7 +115,8 @@ body {
 .result-text {
     display: flex;
     justify-content: center;
-    position: absolute;
+    color: white;
+    padding-top: 50px;
 }
 
 .return-container {
