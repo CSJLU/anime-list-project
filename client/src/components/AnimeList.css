@@ -63,14 +63,18 @@
 
 body {
     background-color: black;
+    height: 100%;
 }
 
 .anime-list-container {
+    max-height: 100vh; 
+    overflow-y: auto;
     margin: 50px 0px;
     padding: 0px 30px;
     background-color: black;
     min-height: 100vh;
     color: white;
+    padding-bottom: 200px;
 }
 
 .anime-list {
@@ -80,8 +84,7 @@ body {
     width:  100%;
     max-width: 900px;
     opacity: 0.4;
-    position: relative;
-    
+    position: relative;  
 }
 
 .anime-title {
@@ -104,12 +107,14 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
     font-size: 1.1rem;
+
 }
 .anime-title, .anime-date, .anime-rating {
     display: flex;
     align-items: center;
     text-align: left;
     justify-content: space-between;
+
 }
 
 .result-text {
