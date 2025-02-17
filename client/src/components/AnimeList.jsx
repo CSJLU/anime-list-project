@@ -32,6 +32,7 @@ const AnimeList = () => {
                             <li className="anime-items">
                                 <div className="anime-title">
                                     <span>{anime.title}</span>
+                                    <img src={anime.images.jpg.image_url} alt="Image of anime"/>
                                 </div>
                                 <div className="anime-rating">
                                     <span>{anime.score}</span>
@@ -40,6 +41,7 @@ const AnimeList = () => {
                                     <span>{anime.aired.prop.from.year}</span>
                                 </div>
                             </li>
+
                         ))}
                     </ul>
                 </div>

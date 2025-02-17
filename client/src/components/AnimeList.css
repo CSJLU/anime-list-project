@@ -74,6 +74,7 @@ body {
     background-color: black;
     min-height: 100vh;
     color: white;
+    padding-top: 25px;
     padding-bottom: 200px;
 }
 
@@ -114,6 +115,7 @@ body {
     align-items: center;
     text-align: left;
     justify-content: space-between;
+    padding: 50px 0px;
 
 }
 
