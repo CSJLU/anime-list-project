@@ -17,7 +17,7 @@ const AudioPlayer = () => {
         }
         setIsPlaying(!isPlaying)
     }
-
+    /*
     return (
         <div>
             <div>
@@ -26,11 +26,12 @@ const AudioPlayer = () => {
                     Audio element is not supported.
                 </audio>
             </div>
-            <button onClick={Toggle}>
+            <button style={{}} onClick={Toggle}>
                 { isPlaying ? "Play" : "Pause" }
             </button>
         </div>
     )
+    */
 }
 
 export default AudioPlayer
