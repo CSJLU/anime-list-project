@@ -2,7 +2,8 @@
     width: 100%;
     min-height: 100vh;
     /*background-image: url('../assets/flowers.jpeg');*/
-    background-image: url('../assets/miku.jpg');
+    /*background-image: url('../assets/miku.jpg'); */
+    background-color: black;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,6 +12,7 @@
     align-items: center;  
     height: 100vh;
     width: 100vw;
+    border: 8px solid blue;
 }
 
 form {
@@ -18,22 +20,31 @@ form {
     flex-direction: column;
 }
 
-h1, .search-input, input::placeholder {
+.search-input, input::placeholder {
     text-align: center;
 }
 
 .search-input {
     margin-top: 15px;
+    /*animation: fade-in 3s;*/
 }
+
+/*
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+*/
 
 
 .hero-card {
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.34);
     width: 750px;
     height: 350px;
 }
@@ -55,5 +66,40 @@ button {
     margin-right: auto;
 }
 
+.hero-text {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}
+
+.homepage-container {
+    height: 100vh;
+    border: 8px solid white;
+    overflow-y: auto;
+}
+
+.intro-container {
+    border: 8px solid blue;
+}
+
+.about-container {
+    border: 8px solid green;
+}
+
+.fun-container {
+    border: 8px solid red;
+
+}
 
 
+.intro-text {
+
+    color: white;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+}

@@ -16,8 +16,7 @@ const Hero = () => {
     /*
      * Once user submits their query input, async function runs and
      * attempts to get data at that endpoint. 
-     * When response is successfully processed, animeData
-     * state is changed. 
+     * When response is successfully processed, animeData state is changed. 
      */
     const HandleAnimeSearch = async (e) => {
         e.preventDefault()
@@ -38,22 +37,37 @@ const Hero = () => {
 
 
     return (
-        <div className="background-container">
-            <div className="hero-card">
-                <form onSubmit={HandleAnimeSearch}>
-                    <h1 className="hero-text">Search for your favorite animes here</h1>
-                    <div className="search-input">
-                        <input
-                            type="text"
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
-                            placeholder="Search for an anime"
-                        />
-                    </div>
-                    <button type="submit">Search</button>
-                </form>
-            </div>
-            <AudioPlayer />
+        <div className="homepage-container">
+            <section className="intro-container">
+                <div className="intro-text">
+                    <h1>Browse for Anime</h1>
+                    <h2>Choose your Ten</h2>
+                </div>
+            </section>
+            <section className="background-container">
+                <div className="hero-card">
+                    <form onSubmit={HandleAnimeSearch}>
+                        <h1 className="hero-text">Search Animes</h1>
+                        <div className="search-input">
+                            <input
+                                type="text"
+                                value={query}
+                                onChange={(e) => setQuery(e.target.value)} //sets query value from user changing their inputs
+                                placeholder="Search for an anime"
+                            />
+                        </div>
+                        <button type="submit">Search</button>
+                    </form>
+                </div>
+                <AudioPlayer />
+            </section>
+            <section className="about-container">
+                <h1>Test about</h1>
+            </section>
+
+            <section className="fun-container">
+                <h1>Test fun</h1>
+            </section>
         </div>
     )
 }
