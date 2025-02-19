@@ -103,3 +103,19 @@ section {
     min-height: 100vh;
     
 }
+
+.about-text {
+    color: white;
+}
+
+.hidden {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.visible {
+    transition: all 1s;
+    opacity: 1;
+}
+
+

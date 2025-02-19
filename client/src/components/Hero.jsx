@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useContext } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useInView } from 'react-intersection-observer'
 import AudioPlayer from './AudioPlayer'
 import './Hero.css'
 import AnimeList from './AnimeList'
@@ -12,7 +13,7 @@ const Hero = () => {
     //const [animeData, setAnimeData] = useState([])
     const { animeData, setAnimeData } = useContext(AnimeContext)
     const navigate = useNavigate()
-
+    const { ref: aboutRef, inView: aboutIsVisible } = useInView()
     /*
      * Once user submits their query input, async function runs and
      * attempts to get data at that endpoint. 
@@ -62,9 +63,8 @@ const Hero = () => {
                 <AudioPlayer />
             </section>
             <section className="about-container">
-                <h1>Test about</h1>
+                <h1 ref={aboutRef} className={`about-text ${aboutIsVisible ? "visible" : "hidden"}`}>Test about</h1>
             </section>
-
             <section className="fun-container">
                 <h1>Test fun</h1>
             </section>
