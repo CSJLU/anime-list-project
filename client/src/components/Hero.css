@@ -1,4 +1,4 @@
-.background-container {
+.search-container {
     width: 100%;
     min-height: 100vh;
     /*background-image: url('../assets/flowers.jpeg');*/
@@ -12,7 +12,8 @@
     align-items: center;  
     height: 100vh;
     width: 100vw;
-    border: 8px solid blue;
+    border-bottom: 4px solid white;
+
 }
 
 form {
@@ -67,32 +68,34 @@ button {
 }
 
 .hero-text {
+    display: flex;
+    justify-content: center;
     font-family: 'Raleway', sans-serif;
     color: white;
+
 }
 
 .homepage-container {
     height: 100vh;
-    border: 8px solid white;
     overflow-y: auto;
 }
 
 .intro-container {
-    border: 8px solid blue;
+    border-bottom: 4px solid white;
 }
 
 .about-container {
-    border: 8px solid green;
+    border-bottom: 4px solid white;
 }
 
 .fun-container {
-    border: 8px solid red;
+    border-bottom: 4px solid white;
 
 }
 
 
 .intro-text {
-
+    font-size: 25px;
     color: white;
 }
 
@@ -110,12 +113,14 @@ section {
 
 .hidden {
     opacity: 0;
-    transition: all 1s;
+    transform: translateY(50px);
 }
 
 .visible {
     transition: all 1s;
     opacity: 1;
+    transform: translateY(0);
+
 }
 
 

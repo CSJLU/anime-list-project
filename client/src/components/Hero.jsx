@@ -13,7 +13,9 @@ const Hero = () => {
     //const [animeData, setAnimeData] = useState([])
     const { animeData, setAnimeData } = useContext(AnimeContext)
     const navigate = useNavigate()
+    const { ref: introRef, inView: introIsVisible } = useInView()
     const { ref: aboutRef, inView: aboutIsVisible } = useInView()
+    const { ref: searchRef, inView: searchIsVisible } = useInView()
     /*
      * Once user submits their query input, async function runs and
      * attempts to get data at that endpoint. 
@@ -41,15 +43,15 @@ const Hero = () => {
         <div className="homepage-container">
             <section className="intro-container">
                 <div className="intro-text">
-                    <h1>Browse for Anime</h1>
-                    <h2>Choose your Ten</h2>
+                    <h1 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Browse for Anime</h1>
+                    <h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>
                 </div>
             </section>
-            <section className="background-container">
+            <section className="search-container">
                 <div className="hero-card">
                     <form onSubmit={HandleAnimeSearch}>
-                        <h1 className="hero-text">Search Animes</h1>
-                        <div className="search-input">
+                        <h1 ref={searchRef} className={`hero-text ${searchIsVisible ? "visible" : "hidden"}`}>Search Animes</h1>
+                        <div ref={searchRef} className={`search-input ${searchIsVisible ? "visible" : "hidden"}`}>
                             <input
                                 type="text"
                                 value={query}
@@ -57,7 +59,7 @@ const Hero = () => {
                                 placeholder="Search for an anime"
                             />
                         </div>
-                        <button type="submit">Search</button>
+                        <button type="submit" ref={searchRef} className={`search-input ${searchIsVisible ? "visible" : "hidden"}`}>Search</button>
                     </form>
                 </div>
                 <AudioPlayer />
