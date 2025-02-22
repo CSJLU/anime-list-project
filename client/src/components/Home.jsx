@@ -4,7 +4,7 @@ import Hero from './Hero'
 const Home = () => {
     return (
         <div>
-            <Header />
+            {/*<Header />*/}
             <Hero />
         </div>
     )
