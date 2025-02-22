@@ -42,10 +42,16 @@ const Hero = () => {
     return (
         <div className="homepage-container">
             <section className="intro-container">
-                <div className="intro-text">
-                    <h1 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Browse for Anime</h1>
-                    <h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>
-                </div>
+                <h1 ref={introRef} className={`intro-text ${introIsVisible ? "visible" : "hidden"}`}>
+                    Browse for Anime
+                    <div className="aurora">
+                        <div className="aurora-item"></div>
+                        <div className="aurora-item"></div>
+                        <div className="aurora-item"></div>
+                        <div className="aurora-item"></div>
+                        </div>
+                    </h1>
+                    {/*<h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>*/}
             </section>
             <section className="search-container">
                 <div className="hero-card">
