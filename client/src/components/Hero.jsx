@@ -51,6 +51,7 @@ const Hero = () => {
                         <div className="aurora-item"></div>
                         </div>
                     </h1>
+                    <h2 ref={introRef} className={`intro-text-bottom ${introIsVisible ? "visible" : "hidden"}`}>Search. Create. Display.</h2>
                     {/*<h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>*/}
             </section>
             <section className="search-container">
