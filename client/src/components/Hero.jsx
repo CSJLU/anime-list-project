@@ -14,7 +14,6 @@ const Hero = () => {
     const { animeData, setAnimeData } = useContext(AnimeContext)
     const navigate = useNavigate()
     const { ref: introRef, inView: introIsVisible } = useInView()
-    const { ref: aboutRef, inView: aboutIsVisible } = useInView()
     const { ref: searchRef, inView: searchIsVisible } = useInView()
     /*
      * Once user submits their query input, async function runs and
@@ -53,6 +52,9 @@ const Hero = () => {
                 </h1>
                 <h2 ref={introRef} className={`intro-text-bottom ${introIsVisible ? "visible" : "hidden"}`}>Search. Create. Display.</h2>
                 {/*<h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>*/}
+
+            </section>
+            <section className="gradient-container">
             </section>
             <section className="search-container">
                 <div className="hero-card">
@@ -68,11 +70,8 @@ const Hero = () => {
                         </div>
                         <button type="submit" ref={searchRef} className={`search-input ${searchIsVisible ? "visible" : "hidden"}`}>Search</button>
                     </form>
-                </div>
-                <AudioPlayer />
-            </section>
-            <section className="about-container">
-                <h1 ref={aboutRef} className={`about-text ${aboutIsVisible ? "visible" : "hidden"}`}>Test about</h1>
+                    </div>
+                    <AudioPlayer />            
             </section>
             <section className="fun-container">
                 <h1>Test fun</h1>
