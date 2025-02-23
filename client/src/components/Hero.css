@@ -1,305 +1,294 @@
 .homepage-container {
-    height: 100vh;
-    overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* Enables text fade-in animation */
 
 .hidden {
-    opacity: 0;
-    transform: translateY(30px);
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .visible {
-    transition: all 1s;
-    opacity: 1;
-    transform: translateY(0);
-
+  transition: all 1s;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* First section with aurora effect
    Source [Ostylowany] */
 
 .intro-container {
-    border-bottom: 4px solid white;
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
 }
 
 .intro-text {
-    font-weight: 800;
-    position: relative;
-    margin: 0;
-    color: white;
-    overflow: hidden;
-    font-size: 60px;
-    z-index: 1;
-    background: black;
+  font-weight: 800;
+  position: relative;
+  margin: 0;
+  color: white;
+  overflow: hidden;
+  font-size: 60px;
+  z-index: 1;
+  background: black;
 }
 
 .intro-text-bottom {
-    color: white;
-    font-weight: 200;
+  color: white;
+  font-weight: 200;
 }
 
 .aurora {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-    mix-blend-mode: darken;
-    pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  mix-blend-mode: darken;
+  pointer-events: none;
 }
 
 .aurora-item {
-    overflow: hidden;
-    position: absolute;
-    width: 60vw;
-    height: 60vw;
-    /*background-color: #00c2ff;*/
-    background-color: #ffcccc;
-    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-    filter: blur(1rem);
-    mix-blend-mode: overlay;
-  }
+  overflow: hidden;
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  /*background-color: #00c2ff;*/
+  background-color: #ffcccc;
+  border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  filter: blur(1rem);
+  mix-blend-mode: overlay;
+}
 
-  .aurora-item:nth-of-type(1) {
-    top: -50%;
-    animation: aurora-border 3s ease-in-out infinite,
-      aurora-1 6s ease-in-out infinite alternate;
-  }
+.aurora-item:nth-of-type(1) {
+  top: -50%;
+  animation: aurora-border 3s ease-in-out infinite,
+    aurora-1 6s ease-in-out infinite alternate;
+}
   
-  .aurora-item:nth-of-type(2) {
-    /*background-color: #ffc640;*/
-    background-color: #80dfff;
-    right: 0;
-    top: 0;
-    animation: aurora-border s ease-in-out infinite,
-      aurora-2 6s ease-in-out infinite alternate;
-  }
+.aurora-item:nth-of-type(2) {
+  background-color: #80dfff;
+  right: 0;
+  top: 0;
+  animation: aurora-border s ease-in-out infinite,
+    aurora-2 6s ease-in-out infinite alternate;
+}
   
-  .aurora-item:nth-of-type(3) {
-    /*background-color: #33ff8c;*/
-    background-color: #b3d9ff;
-    left: 0;
-    bottom: 0;
-    animation: aurora-border 3s ease-in-out infinite,
-      aurora-3 6s ease-in-out infinite alternate;
-  }
+.aurora-item:nth-of-type(3) {
+  background-color: #b3d9ff;
+  left: 0;
+  bottom: 0;
+  animation: aurora-border 3s ease-in-out infinite,
+    aurora-3 6s ease-in-out infinite alternate;
+}
   
-  .aurora-item:nth-of-type(4) {
-    /*background-color: #e54cff;*/
-    background-color: #ccccff;
-    right: 0;
-    bottom: -50%;
-    animation: aurora-border 3s ease-in-out infinite,
-      aurora-4 6s ease-in-out infinite alternate;
-  }
+.aurora-item:nth-of-type(4) {
+  background-color: #ccccff;
+  right: 0;
+  bottom: -50%;
+  animation: aurora-border 3s ease-in-out infinite,
+    aurora-4 6s ease-in-out infinite alternate;
+}
 
 
 @keyframes aurora-1 {
-    0% {
-      top: 0;
-      right: 0;
-    }
-  
-    50% {
-      top: 100%;
-      right: 75%;
-    }
-  
-    75% {
-      top: 100%;
-      right: 25%;
-    }
-  
-    100% {
-      top: 0;
-      right: 0;
-    }
-  }
-  
-  @keyframes aurora-2 {
-    0% {
-      top: -50%;
-      left: 0%;
-    }
-  
-    60% {
-      top: 100%;
-      left: 75%;
-    }
-  
-    85% {
-      top: 100%;
-      left: 25%;
-    }
-  
-    100% {
-      top: -50%;
-      left: 0%;
-    }
-  }
-  
-  @keyframes aurora-3 {
-    0% {
-      bottom: 0;
-      left: 0;
-    }
-  
-    40% {
-      bottom: 100%;
-      left: 75%;
-    }
-  
-    65% {
-      bottom: 40%;
-      left: 50%;
-    }
-  
-    100% {
-      bottom: 0;
-      left: 0;
-    }
-  }
-  
-  @keyframes aurora-4 {
-    0% {
-      bottom: -50%;
-      right: 0;
-    }
-  
-    50% {
-      bottom: 0%;
-      right: 40%;
-    }
-  
-    90% {
-      bottom: 50%;
-      right: 25%;
-    }
-  
-    100% {
-      bottom: -50%;
-      right: 0;
-    }
+  0% {
+    top: 0;
+    right: 0;
   }
 
-  @keyframes aurora-border {
-    0% {
-      border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-    }
+  50% {
+    top: 100%;
+    right: 75%;
+  }
+
+  75% {
+    top: 100%;
+    right: 25%;
+  }
+
+  100% {
+    top: 0;
+    right: 0;
+  }
+}
   
-    25% {
-      border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
-    }
+@keyframes aurora-2 {
+  0% {
+    top: -50%;
+    left: 0%;
+  }
+
+  60% {
+    top: 100%;
+    left: 75%;
+  }
+
+  85% {
+    top: 100%;
+    left: 25%;
+  }
+
+  100% {
+    top: -50%;
+    left: 0%;
+  }
+}
   
-    50% {
-      border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
-    }
+@keyframes aurora-3 {
+  0% {
+    bottom: 0;
+    left: 0;
+  }
+
+  40% {
+    bottom: 100%;
+    left: 75%;
+  }
+
+  65% {
+    bottom: 40%;
+    left: 50%;
+  }
+
+  100% {
+    bottom: 0;
+    left: 0;
+  }
+}
   
-    75% {
-      border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
-    }
-  
-    100% {
-      border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
-    }
+@keyframes aurora-4 {
+  0% {
+    bottom: -50%;
+    right: 0;
+  }
+
+  50% {
+    bottom: 0%;
+    right: 40%;
+  }
+
+  90% {
+    bottom: 50%;
+    right: 25%;
+  }
+
+  100% {
+    bottom: -50%;
+    right: 0;
+  }
+}
+
+@keyframes aurora-border {
+  0% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
+
+  25% {
+    border-radius: 47% 29% 39% 49% / 61% 19% 66% 26%;
+  }
+
+  50% {
+    border-radius: 57% 23% 47% 72% / 63% 17% 66% 33%;
+  }
+
+  75% {
+    border-radius: 28% 49% 29% 100% / 93% 20% 64% 25%;
+  }
+
+  100% {
+    border-radius: 37% 29% 27% 27% / 28% 25% 41% 37%;
+  }
 }
 
 
 /* Second section with search feature */
 
 .search-container {
-    width: 100%;
-    min-height: 100vh;
-    /*background-image: url('../assets/flowers.jpeg');*/
-    /*background-image: url('../assets/miku.jpg'); */
-    background-color: black;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;  
-    height: 100vh;
-    width: 100vw;
-    border-bottom: 4px solid white;
-
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f4dfc8;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  height: 100vh;
+  width: 100vw;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-input, input::placeholder {
-    text-align: center;
+  text-align: center;
 }
 
 .search-input {
-    margin-top: 15px;
-    /*animation: fade-in 3s;*/
+  margin-top: 15px;
 }
 
 .hero-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 750px;
-    height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 750px;
+  height: 350px;
 }
 
 
 input, button {
-    height: 30px;
-    border: none;
+  height: 30px;
+  border: none;
 }
 
 input {
-    width: 250px;
+  width: 250px;
 }
 
 button {
-    width: 100px;
-    margin-top: 15px;
-    margin-left: auto;
-    margin-right: auto;
+  width: 100px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-text {
-    display: flex;
-    justify-content: center;
-    font-family: 'Raleway', sans-serif;
-    color: white;
-
+  display: flex;
+  justify-content: center;
+  font-family: 'Raleway', sans-serif;
+  color: black;
 }
 
 /* Third section - about me / project */
 
 .about-container {
-    border-bottom: 4px solid white;
+  background-color: #f4eae0;
 }
 
 .about-text {
-    color: white;
+  color: black;
 }
 
 
 /* Fourth section - little fun thing with music playability perhaps*/
 
 .fun-container {
-    border-bottom: 4px solid white;
-
+  background-color: #faf6f0;
 }
 
 
