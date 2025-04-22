@@ -211,18 +211,7 @@ section {
     }
 }
 
-/* Second section to help with gradient transition */
-
-.gradient-container {
-    width: 100%;
-    min-height: 100vh;
-    height: 100vh;
-    width: 100vw;
-    background: linear-gradient(to top, #9bc5ef 0%, rgba(86, 116, 146, 0.8) 50%, rgba(255, 255, 255, 0) 100%);
-}
-
-
-/* Third section with search feature */
+/* Second section with search feature */
 
 .search-container {
     width: 100%;
@@ -232,7 +221,7 @@ section {
     align-items: center;  
     height: 100vh;
     width: 100vw;
-    background: linear-gradient(to bottom, #9bc5ef 0%, #b3d9ff 50%, #faf6f0 100%);
+    background: black;
 }
 
 form {
@@ -281,10 +270,5 @@ button {
 }
 
 
-/* Fourth section to have fun with music playability feature perhaps*/
-
-.fun-container {
-    background-color: #faf6f0;
-}
-
+/* Third section to have fun with music playability feature perhaps*/
 

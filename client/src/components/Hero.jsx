@@ -54,8 +54,6 @@ const Hero = () => {
                 {/*<h2 ref={introRef} className={`${introIsVisible ? "visible" : "hidden"}`}>Choose your Ten</h2>*/}
 
             </section>
-            <section className="gradient-container">
-            </section>
             <section className="search-container">
                 <div className="hero-card">
                     <form onSubmit={HandleAnimeSearch}>
@@ -72,9 +70,6 @@ const Hero = () => {
                     </form>
                     </div>
                     <AudioPlayer />            
-            </section>
-            <section className="fun-container">
-                <h1>Test fun</h1>
             </section>
         </div>
     )
