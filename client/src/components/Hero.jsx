@@ -15,6 +15,8 @@ const Hero = () => {
     const navigate = useNavigate()
     const { ref: introRef, inView: introIsVisible } = useInView()
     const { ref: searchRef, inView: searchIsVisible } = useInView()
+    const { ref: buttonRef, inView: buttonIsVisible } = useInView()
+
     /*
      * Once user submits their query input, async function runs and
      * attempts to get data at that endpoint. 
@@ -37,6 +39,26 @@ const Hero = () => {
         }
     }
 
+    const HandleLogin = async (e) => {
+        e.preventDefault()
+        try {
+            navigate('/login')
+        }
+        catch (error) {
+            console.error('Failed to navigate to login page')
+        }
+    }
+
+    const HandleSignUp = async(e) => {
+        e.preventDefault()
+        try {
+            navigate('/signup')
+        }
+        catch (error) {
+            console.error('Failed to navigate to sign up page')
+        }
+    }
+
 
     return (
         <div className="homepage-container">
@@ -55,7 +77,7 @@ const Hero = () => {
 
             </section>
             <section className="search-container">
-                <div className="hero-card">
+                <div ref={searchRef} className={`hero-card ${searchIsVisible ? "visible" : "hidden"}`}>
                     <form onSubmit={HandleAnimeSearch}>
                         <h1 ref={searchRef} className={`hero-text ${searchIsVisible ? "visible" : "hidden"}`}>Search Animes</h1>
                         <div ref={searchRef} className={`search-input ${searchIsVisible ? "visible" : "hidden"}`}>
@@ -66,7 +88,9 @@ const Hero = () => {
                                 placeholder="Search for an anime"
                             />
                         </div>
-                        <button type="submit" ref={searchRef} className={`search-input ${searchIsVisible ? "visible" : "hidden"}`}>Search</button>
+                        <button type="submit" ref={buttonRef} className={`search-input ${buttonIsVisible ? "visible" : "hidden"}`}>Display</button>
+                        <button type="button" ref={buttonRef} onClick={HandleLogin} className={`search-input ${buttonIsVisible ? "visible" : "hidden"}`}>Login</button>
+                        <button type="button" ref={buttonRef} onClick={HandleSignUp} className={`search-input ${buttonIsVisible ? "visible" : "hidden"}`}>Sign Up</button>
                     </form>
                     </div>
                     <AudioPlayer />            

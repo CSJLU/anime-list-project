@@ -234,6 +234,7 @@ form {
 }
 
 .search-input {
+    background-color: #b3d9ff;
     margin-top: 15px;
 }
 
@@ -241,8 +242,10 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 750px;
-    height: 350px;
+    width: 1300px;
+    height: 650px;
+    background-color:#cce6ff;
+    border-radius: 20px;
 }
 
 
@@ -266,7 +269,7 @@ button {
     display: flex;
     justify-content: center;
     font-family: 'Raleway', sans-serif;
-    color: white;
+    color: black;
 }
 
 
